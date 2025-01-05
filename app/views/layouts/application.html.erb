@@ -23,12 +23,13 @@
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
+  <body>
   <nav>
     <%= link_to "Home", root_path %>
     <%= button_to "Log out", session_path, method: :delete if authenticated? %>
     <%= link_to "Login", new_session_path unless authenticated? %>
   </nav>
-  <body>
+  <div class="notice"><%= notice %></div>
     <%= yield %>
   </body>
 </html>
